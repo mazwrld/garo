@@ -10,13 +10,15 @@
     "**/.next": true
   },
   "cSpell.words": [
+    "clientside",
     "CLIENTVAR",
     "Garo",
     "nextjs",
     "runtimes",
     "Shadcn",
     "tailwindcss",
-    "trpc"
+    "trpc",
+    "uploadthing"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }
