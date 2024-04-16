@@ -17,7 +17,7 @@ Garo is a gallery app built with Next.js and Postgres. It allows users to view a
 1. Clone the repository.
 2. Install dependencies using `pnpm install`.
 3. Set up your environment variables (e.g., database credentials, Clerk API keys).
-4. Run the development server using `npm run dev`.
+4. Run the development server using `pnpm dev`.
 5. Access the app at `http://localhost:3000`.
 
 ## Features
