@@ -1,29 +1,45 @@
-# Create T3 App
+# Garo
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## Overview
+Garo is a gallery app built with Next.js and Postgres. It allows users to view and interact with a collection of images.
 
-## What's next? How do I make an app with this?
+## Technologies Used
+- Next.js
+- Postgres
+- PM2 (for process management)
+- Clerk (for authentication)
+- Tailwind CSS (for styling)
+- Drizzle ORM
+- Shadcn UI (for UI components)
+- TypeScript
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Setup
+1. Clone the repository.
+2. Install dependencies using `pnpm install`.
+3. Set up your environment variables (e.g., database credentials, Clerk API keys).
+4. Run the development server using `npm run dev`.
+5. Access the app at `http://localhost:3000`.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Features
+- User authentication with Clerk.
+- CRUD operations for managing images.
+- Responsive UI design with Tailwind CSS.
+- Data persistence with Postgres and Drizzle ORM.
+- TypeScript for type safety.
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## Usage
+- Register an account or log in using Clerk.
+- Browse the gallery and view images.
+- Upload new images.
+- Edit or delete existing images.
 
-## Learn More
+## Contributing
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/my-feature`).
+3. Make your changes.
+4. Commit your changes (`git commit -am 'Add my feature'`).
+5. Push to the branch (`git push origin feature/my-feature`).
+6. Create a new Pull Request.
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## License
+This project is licensed under the [MIT License](LICENSE).
