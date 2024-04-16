@@ -1,8 +1,10 @@
-import Nav from "@/components/nav";
 import "@/styles/globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
+import "@uploadthing/react/styles.css";
 
+import { ClerkProvider } from "@clerk/nextjs";
 import { Lato } from "next/font/google";
+
+import Nav from "@/components/nav";
 
 const lato = Lato({
   subsets: ["latin"],
