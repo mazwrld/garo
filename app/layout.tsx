@@ -1,3 +1,4 @@
+import Nav from "@/components/Nav";
 import "@/styles/globals.css";
 
 import { Lato } from "next/font/google";
@@ -22,7 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${lato.variable}`}>{children}</body>
+      <body className={`font-sans ${lato.variable} flex flex-col gap-4`}>
+        <Nav />
+        {children}
+      </body>
     </html>
   );
 }

@@ -20,7 +20,6 @@ export default function HomePage() {
           </div>
         ))}
       </div>
-      Hello (Garo in progress)
     </main>
   );
 }
