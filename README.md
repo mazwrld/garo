@@ -6,7 +6,6 @@ Garo is a gallery app built with Next.js and Postgres. It allows users to view a
 ## Technologies Used
 - Next.js
 - Postgres
-- PM2 (for process management)
 - Clerk (for authentication)
 - Tailwind CSS (for styling)
 - Drizzle ORM
