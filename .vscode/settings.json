@@ -15,7 +15,8 @@
     "nextjs",
     "runtimes",
     "Shadcn",
-    "tailwindcss"
+    "tailwindcss",
+    "trpc"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }
