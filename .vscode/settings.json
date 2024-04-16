@@ -9,6 +9,13 @@
     "**/node_modules": true,
     "**/.next": true
   },
-  "cSpell.words": ["CLIENTVAR", "Garo", "nextjs", "runtimes", "tailwindcss"],
+  "cSpell.words": [
+    "CLIENTVAR",
+    "Garo",
+    "nextjs",
+    "runtimes",
+    "Shadcn",
+    "tailwindcss"
+  ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }
