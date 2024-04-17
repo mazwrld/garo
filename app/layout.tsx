@@ -7,7 +7,7 @@ import { Lato } from "next/font/google";
 import { extractRouterConfig } from "uploadthing/server";
 
 import { uploadThingFileRouter } from "@/app/api/uploadthing/core";
-import Nav from "@/component/nav";
+import Nav from "@/components/nav";
 
 const lato = Lato({
   subsets: ["latin"],
