@@ -18,6 +18,7 @@
     "runtimes",
     "Shadcn",
     "tailwindcss",
+    "Transpiles",
     "trpc",
     "typecheck",
     "uploadthing",

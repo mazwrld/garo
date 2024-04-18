@@ -1,7 +1,9 @@
+import { withSentryConfig } from '@sentry/nextjs'
+
 await import('./env.js')
 
 /** @type {import("next").NextConfig} */
-const config = {
+const nextConfig = {
   images: {
     remotePatterns: [
       {
@@ -17,5 +19,22 @@ const config = {
   },
   swcMinify: true,
 }
+
+const config = withSentryConfig(
+  nextConfig,
+  {
+    silent: true,
+    org: 'maz-ds',
+    project: 'garo',
+  },
+  {
+    widenClientFileUpload: true,
+    transpileClientSDK: true,
+    tunnelRoute: '/monitoring',
+    hideSourceMaps: true,
+    disableLogger: true,
+    automaticVercelMonitors: true,
+  }
+)
 
 export default config
