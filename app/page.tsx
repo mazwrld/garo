@@ -1,7 +1,8 @@
-import Images from "@/components/images";
-import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { SignedIn, SignedOut } from '@clerk/nextjs'
 
-export const dynamic = "force-dynamic";
+import Images from '@/components/images'
+
+export const dynamic = 'force-dynamic'
 
 export default async function HomePage() {
   return (
@@ -13,5 +14,5 @@ export default async function HomePage() {
         <Images />
       </SignedIn>
     </main>
-  );
+  )
 }

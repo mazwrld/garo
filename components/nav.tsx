@@ -1,11 +1,11 @@
-"use client";
+'use client'
 
-import { UploadButton } from "@/utils/uploadthing";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation'
+import { UploadButton } from '@/utils/uploadthing'
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
 
 export default function Nav() {
-  const router = useRouter();
+  const router = useRouter()
   return (
     <header className="sticky z-50 flex items-center justify-center">
       {/* <nav className="supports-[backdrop-filter] absolute w-full rounded-none bg-zinc-950/50 shadow-lg backdrop-blur-[0.5rem] transition-all duration-200 sm:top-4 sm:w-[36rem] sm:rounded-full"> */}
@@ -19,7 +19,7 @@ export default function Nav() {
             <UploadButton
               endpoint="imageUploader"
               onClientUploadComplete={() => {
-                router.refresh();
+                router.refresh()
               }}
             />
             <UserButton></UserButton>
@@ -28,5 +28,5 @@ export default function Nav() {
       </div>
       {/* </nav> */}
     </header>
-  );
+  )
 }

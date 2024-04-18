@@ -1,31 +1,33 @@
-import "@/styles/globals.css";
-import "@uploadthing/react/styles.css";
+import Nav from '@/components/nav'
+import { uploadThingFileRouter } from '@/app/api/uploadthing/core'
 
-import { ClerkProvider } from "@clerk/nextjs";
-import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
-import { Lato } from "next/font/google";
-import { extractRouterConfig } from "uploadthing/server";
+import '@/styles/globals.css'
 
-import { uploadThingFileRouter } from "@/app/api/uploadthing/core";
-import Nav from "@/components/nav";
+import { ClerkProvider } from '@clerk/nextjs'
+import { NextSSRPlugin } from '@uploadthing/react/next-ssr-plugin'
+
+import '@uploadthing/react/styles.css'
+
+import { Lato } from 'next/font/google'
+import { extractRouterConfig } from 'uploadthing/server'
 
 const lato = Lato({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  weight: ["300", "400", "700"],
-  style: ["normal", "italic"],
-});
+  subsets: ['latin'],
+  variable: '--font-sans',
+  weight: ['300', '400', '700'],
+  style: ['normal', 'italic'],
+})
 
 export const metadata = {
-  title: "Garo - A Gallery App",
-  description: "Garo - Japanese for Gallery.",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
-};
+  title: 'Garo - A Gallery App',
+  description: 'Garo - Japanese for Gallery.',
+  icons: [{ rel: 'icon', url: '/favicon.ico' }],
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <ClerkProvider>
@@ -39,5 +41,5 @@ export default function RootLayout({
         </body>
       </html>
     </ClerkProvider>
-  );
+  )
 }

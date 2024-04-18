@@ -1,9 +1,11 @@
 # Garo
 
 ## Overview
+
 Garo is a gallery app built with Next.js and Postgres. It allows users to view and interact with a collection of images.
 
 ## Technologies Used
+
 - Next.js
 - Postgres
 - Clerk (for authentication)
@@ -13,6 +15,7 @@ Garo is a gallery app built with Next.js and Postgres. It allows users to view a
 - TypeScript
 
 ## Setup
+
 1. Clone the repository.
 2. Install dependencies using `pnpm install`.
 3. Set up your environment variables (e.g., database credentials, Clerk API keys).
@@ -20,19 +23,23 @@ Garo is a gallery app built with Next.js and Postgres. It allows users to view a
 5. Access the app at `http://localhost:3000`.
 
 ## Features
+
 - User authentication with Clerk.
 - CRUD operations for managing images.
+- Uploadthing for uploading.
 - Responsive UI design with Tailwind CSS.
 - Data persistence with Postgres and Drizzle ORM.
 - TypeScript for type safety.
 
 ## Usage
+
 - Register an account or log in using Clerk.
 - Browse the gallery and view images.
 - Upload new images.
 - Edit or delete existing images.
 
 ## Contributing
+
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/my-feature`).
 3. Make your changes.
@@ -41,4 +48,5 @@ Garo is a gallery app built with Next.js and Postgres. It allows users to view a
 6. Create a new Pull Request.
 
 ## License
+
 This project is licensed under the [MIT License](LICENSE).
