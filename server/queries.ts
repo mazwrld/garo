@@ -7,11 +7,28 @@ import { db } from './db'
 export async function getUserImages() {
   const user = auth()
 
-  if (!user.userId) throw new Error('Unauthorized')
+  if (!user.userId) throw new Error('Unauthorized.')
 
   const images = await db.query.images.findMany({
     where: (model, { eq }) => eq(model.userId, user.userId),
     orderBy: (model, { desc }) => desc(model.id),
   })
+
   return images
+}
+
+export async function getUserImage(id: number) {
+  const user = auth()
+
+  if (!user.userId) throw new Error('Unauthorized.')
+
+  const image = await db.query.images.findFirst({
+    where: (model, { eq }) => eq(model.id, id),
+  })
+
+  if (!image) throw new Error('No image found.')
+
+  if (image.userId !== user.userId) throw new Error('Unauthorized.')
+
+  return image
 }

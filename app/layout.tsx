@@ -26,8 +26,10 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  model,
 }: {
   children: React.ReactNode
+  model: React.ReactNode
 }) {
   return (
     <ClerkProvider>
@@ -38,6 +40,8 @@ export default function RootLayout({
         <body className={`font-sans ${lato.variable} flex flex-col gap-4`}>
           <Nav />
           {children}
+          {model}
+          <div id="model-root"></div>
         </body>
       </html>
     </ClerkProvider>
