@@ -19,7 +19,8 @@
     "Shadcn",
     "tailwindcss",
     "trpc",
-    "uploadthing"
+    "uploadthing",
+    "utfs"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }
