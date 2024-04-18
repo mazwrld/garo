@@ -1,9 +1,7 @@
-import { db } from '@/server/db'
+import { getUserImages } from '@/server/queries'
 
 export default async function Images() {
-  const images = await db.query.images.findMany({
-    orderBy: (model, { desc }) => desc(model.id),
-  })
+  const images = await getUserImages()
   return (
     <div className="flex flex-wrap gap-4">
       {images.map((image) => (
