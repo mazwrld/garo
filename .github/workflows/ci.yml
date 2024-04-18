@@ -7,6 +7,9 @@ on:
 jobs:
   install:
     runs-on: ubuntu-latest
+      env:
+      POSTGRES_URL: "postgresql://postgres:password@localhost:5432/garo"
+      DATABASE_URL: "postgresql://postgres:password@localhost:5432/garo"
 
     steps:
       - name: Checkout
@@ -29,3 +32,6 @@ jobs:
 
       - name: Type check
         run: pnpm typecheck
+
+      - name: Lint
+        run: pnpm lint
