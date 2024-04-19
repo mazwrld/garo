@@ -1,7 +1,6 @@
 import FullPageImageView from '@/components/fullImagePage'
-import { Modal } from '@/app/@modal/(.)images/[id]/modal'
 
-export default function ImageModel({
+export default function ImagePage({
   params: { id: imageId },
 }: {
   params: { id: string }
@@ -10,9 +9,5 @@ export default function ImageModel({
 
   if (Number.isNaN(idAsNumber)) throw new Error('Invalid image id.')
 
-  return (
-    <Modal>
-      <FullPageImageView imageId={idAsNumber} />
-    </Modal>
-  )
+  return <FullPageImageView imageId={idAsNumber} />
 }
