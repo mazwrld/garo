@@ -1,5 +1,9 @@
 import { getUserImage } from '@/server/queries'
 
+import { Modal } from './modal'
+
+// import { Modal } from '@/app/@modal/(.)images/[id]/modal'
+
 export default async function ImageModel({
   params: { id: imageId },
 }: {
@@ -12,8 +16,8 @@ export default async function ImageModel({
   const image = await getUserImage(idAsNumber)
 
   return (
-    <div>
+    <Modal>
       <img className="w-96" src={image.url} alt={image.name} />
-    </div>
+    </Modal>
   )
 }
