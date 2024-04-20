@@ -12,7 +12,7 @@ export default async function FullPageImageView(props: { imageId: number }) {
           alt={image.name}
         />
       </div>
-      <div className="flex w-48 flex-shrink-0 flex-col">
+      <div className="flex w-48 flex-shrink-0 flex-col border-l">
         <h1 className="text-xl font-bold">{image.name}</h1>
       </div>
     </div>

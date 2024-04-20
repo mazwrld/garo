@@ -38,7 +38,7 @@ export default function RootLayout({
           routerConfig={extractRouterConfig(uploadThingFileRouter)}
         />
         <body className={`font-sans ${lato.variable}`}>
-          <div className="grid-rows-[auto, 1fr] grid h-screen">
+          <div className="grid h-screen grid-rows-[auto,1fr]">
             <Nav />
             <main className="overflow-y-scroll">{children}</main>
           </div>
