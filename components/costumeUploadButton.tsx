@@ -48,23 +48,37 @@ function UploadSVG() {
   )
 }
 
+function Spinner() {
+  return (
+    <svg className="spinner" width="24" height="24" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8" fill="none" />
+    </svg>
+  )
+}
+
 export default function CostumeUploadButton() {
   const router = useRouter()
   const { inputProps } = useUploadThingInputProps('imageUploader', {
     onUploadBegin() {
-      toast('Uploading...', {
-        duration: this.onClientUploadComplete ? 0 : 10000,
-        id: 'upload-being',
-      })
+      toast(
+        <div className="flex gap-2">
+          <Spinner />
+          <span>Uploading...</span>
+        </div>,
+        {
+          duration: this.onClientUploadComplete ? 0 : 10000,
+          id: 'upload-being',
+        }
+      )
     },
     onClientUploadComplete() {
       toast.dismiss('upload-being')
-      toast('Upload completed')
+      toast('Upload completed!')
       router.refresh()
     },
   })
   return (
-    <div title="Upload">
+    <div>
       <label htmlFor="upload-button" title="Upload" className="cursor-pointer">
         <UploadSVG />
       </label>

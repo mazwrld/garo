@@ -14,6 +14,7 @@ export default async function Images() {
               style={{ objectFit: 'contain' }}
               width={480}
               height={480}
+              priority
               alt={`The name of the file is${image.name}. This an image a user uploaded.`}
             />
             <div>{image.name}</div>
