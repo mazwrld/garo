@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { getUserImage } from '@/server/queries'
 
 export default async function FullPageImageView(props: { imageId: number }) {
