@@ -1,3 +1,4 @@
+import { Toaster } from '@/components/ui/sonner'
 import Nav from '@/components/nav'
 import { uploadThingFileRouter } from '@/app/api/uploadthing/core'
 
@@ -44,6 +45,7 @@ export default function RootLayout({
           </div>
           {modal}
           <div id="modal-root"></div>
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
