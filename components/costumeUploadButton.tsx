@@ -33,17 +33,11 @@ function UploadSVG() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
       viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
+      fill="currentColor"
       className="h-6 w-6"
     >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M7.5 7.5h-.75A2.25 2.25 0 0 0 4.5 9.75v7.5a2.25 2.25 0 0 0 2.25 2.25h7.5a2.25 2.25 0 0 0 2.25-2.25v-7.5a2.25 2.25 0 0 0-2.25-2.25h-.75m0-3-3-3m0 0-3 3m3-3v11.25m6-2.25h.75a2.25 2.25 0 0 1 2.25 2.25v7.5a2.25 2.25 0 0 1-2.25 2.25h-7.5a2.25 2.25 0 0 1-2.25-2.25v-.75"
-      />
+      <path d="M11.47 1.72a.75.75 0 0 1 1.06 0l3 3a.75.75 0 0 1-1.06 1.06l-1.72-1.72V7.5h-1.5V4.06L9.53 5.78a.75.75 0 0 1-1.06-1.06l3-3ZM11.25 7.5V15a.75.75 0 0 0 1.5 0V7.5h3.75a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-9a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h3.75Z" />
     </svg>
   )
 }
@@ -61,9 +55,9 @@ export default function CostumeUploadButton() {
   const { inputProps } = useUploadThingInputProps('imageUploader', {
     onUploadBegin() {
       toast(
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
           <Spinner />
-          <span>Uploading...</span>
+          <span className="font-italic">Uploading...</span>
         </div>,
         {
           duration: this.onClientUploadComplete ? 0 : 10000,

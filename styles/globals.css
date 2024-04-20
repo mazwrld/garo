@@ -91,7 +91,7 @@
     stroke: white;
     stroke-linecap: round;
     stroke-width: 3;
-    animation: dash 3s ease-in-out infinite;
+    animation: dash 1.5s ease-in-out infinite;
   }
 
   @keyframes dash {
