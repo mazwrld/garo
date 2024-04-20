@@ -7,7 +7,7 @@ export default async function Images() {
   return (
     <div className="flex flex-wrap justify-center gap-4">
       {images.map((image) => (
-        <div key={image.id} className="flex w-48 h-48 flex-col">
+        <div key={image.id} className="flex h-48 w-48 flex-col">
           <Link href={`/images/${image.id}`}>
             <Image
               src={image.url}
