@@ -1,36 +1,12 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import SpinnerSVG from '@/components/ui/spinner'
-import UploadSVG from '@/components/ui/uploadSVG'
-import { useUploadThing } from '@/utils/uploadthing'
+import useUploadThingInputProps from '@/utils/useUploadThingInputProps'
 import { usePostHog } from 'posthog-js/react'
 import { toast } from 'sonner'
 
-type Input = Parameters<typeof useUploadThing>
-
-const useUploadThingInputProps = (...args: Input) => {
-  const $ut = useUploadThing(...args)
-
-  const onChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!e.target.files) return
-
-    const selectedFiles = Array.from(e.target.files)
-    const result = await $ut.startUpload(selectedFiles)
-
-    console.log('uploaded files', result)
-    // TODO: persist result in state maybe?
-  }
-
-  return {
-    inputProps: {
-      onChange,
-      multiple: ($ut.permittedFileInfo?.config?.image?.maxFileCount ?? 1) > 1,
-      accept: 'image/*',
-    },
-    isUploading: $ut.isUploading,
-  }
-}
+import SpinnerSVG from '@/components/ui/spinner'
+import UploadSVG from '@/components/ui/uploadSVG'
 
 export default function CostumeUploadButton() {
   const router = useRouter()
@@ -44,7 +20,7 @@ export default function CostumeUploadButton() {
           <span className="font-italic">Uploading...</span>
         </div>,
         {
-          duration: this.onClientUploadComplete ? 0 : 10000,
+          duration: 10000,
           id: 'upload-being',
         }
       )

@@ -1,6 +1,5 @@
 import 'server-only'
 
-import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { db } from '@/server/db'
 import { images } from '@/server/db/schema'
@@ -49,6 +48,5 @@ export async function deleteImage(imageId: number) {
     .delete(images)
     .where(and(eq(images.id, imageId), eq(images.userId, user.userId)))
 
-  revalidatePath('/')
   redirect('/')
 }
