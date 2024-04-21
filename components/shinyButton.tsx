@@ -9,7 +9,10 @@ export default function ShinyButton({
 }) {
   return (
     <motion.button
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error SHUT UP ALREADY
       initial={{ '--x': '100%', scale: 1 }}
+      // @ts-expect-error TRUST ME THIS WORKS
       animate={{ '--x': '-100%' }}
       whileTap={{ scale: 0.88 }}
       transition={{
