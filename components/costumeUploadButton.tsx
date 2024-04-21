@@ -1,8 +1,8 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import SpinnerSVG from '@/assets/spinner'
-import UploadSVG from '@/assets/uploadSVG'
+import SpinnerSVG from '@/components/ui/spinner'
+import UploadSVG from '@/components/ui/uploadSVG'
 import { useUploadThing } from '@/utils/uploadthing'
 import { usePostHog } from 'posthog-js/react'
 import { toast } from 'sonner'
