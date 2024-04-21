@@ -1,18 +1,33 @@
+import { Suspense } from 'react'
 import { SignedIn, SignedOut } from '@clerk/nextjs'
 
 import Images from '@/components/images'
 
 export const dynamic = 'force-dynamic'
 
-export default async function HomePage() {
+function Loading() {
   return (
-    <main className="">
+    <div className="flex h-full items-center justify-center overflow-hidden">
+      <div className="relative rounded-lg p-5 shadow-lg">
+        <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center">
+          <div className="h-20 w-20 animate-spin rounded-full border-4 border-white"></div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default function HomePage() {
+  return (
+    <>
       <SignedOut>
         <div className="h-full w-full text-center text-2xl">Please sign in</div>
       </SignedOut>
       <SignedIn>
-        <Images />
+        <Suspense fallback={<Loading />}>
+          <Images />
+        </Suspense>
       </SignedIn>
-    </main>
+    </>
   )
 }
