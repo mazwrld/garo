@@ -36,7 +36,7 @@ export default async function FullPageImageView(props: { imageId: number }) {
           </span>
         </div>
 
-        <div className="p-2">
+        <div className="mt-auto flex w-full justify-center p-4">
           <form
             action={async () => {
               'use server'

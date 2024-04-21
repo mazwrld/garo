@@ -33,7 +33,7 @@ export default function ShinyButton({
           mass: 0.1,
         },
       }}
-      className="radial-gradient relative rounded-md px-6 py-2"
+      className="radial-gradient relative w-40 rounded-md px-6 py-2"
     >
       <span className="linear-mask relative block h-full w-full tracking-wide">
         {children}
