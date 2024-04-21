@@ -1,6 +1,7 @@
 import 'server-only'
 
 import { redirect } from 'next/navigation'
+import severSideAnalytics from '@/server/analytics'
 import { db } from '@/server/db'
 import { images } from '@/server/db/schema'
 import { auth } from '@clerk/nextjs/server'
@@ -47,6 +48,14 @@ export async function deleteImage(imageId: number) {
   await db
     .delete(images)
     .where(and(eq(images.id, imageId), eq(images.userId, user.userId)))
+
+  severSideAnalytics.capture({
+    distinctId: user.userId,
+    event: 'delete image',
+    properties: {
+      idOfDeletedImage: imageId,
+    },
+  })
 
   redirect('/')
 }

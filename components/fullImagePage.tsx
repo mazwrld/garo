@@ -8,7 +8,7 @@ export default async function FullPageImageView(props: { imageId: number }) {
   const idAsNumber = Number(props.imageId)
   if (Number.isNaN(idAsNumber)) throw new Error('Invalid photo id')
 
-  const image = await getUserImage(props.imageId)
+  const image = await getUserImage(idAsNumber)
   const uploaderInfo = await clerkClient.users.getUser(image.userId)
   return (
     <div className="flex h-full w-screen min-w-0">
