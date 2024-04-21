@@ -1,5 +1,6 @@
 import { db } from '@/server/db'
 import { images } from '@/server/db/schema'
+import { ratelimit } from '@/server/ratelimit'
 import { auth } from '@clerk/nextjs/server'
 import { createUploadthing, type FileRouter } from 'uploadthing/next'
 import { UploadThingError } from 'uploadthing/server'
@@ -11,6 +12,10 @@ export const uploadThingFileRouter = {
     .middleware(async () => {
       const user = auth()
       if (!user.userId) throw new UploadThingError('Unauthorized')
+
+      const { success } = await ratelimit.limit(user.userId)
+
+      if (!success) throw new UploadThingError('Ratelimited')
 
       return { userId: user.userId }
     })

@@ -25,6 +25,11 @@ export default function CostumeUploadButton() {
         }
       )
     },
+    onUploadError(error) {
+      toast.dismiss('upload-being')
+      postHog.capture('upload error', { error })
+      toast.error('Upload failed')
+    },
     onClientUploadComplete() {
       toast.dismiss('upload-being')
       toast('Upload completed!')
