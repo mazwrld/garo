@@ -1,3 +1,5 @@
+import CSPostHogProvider from '@/analytics/providers'
+
 import { Toaster } from '@/components/ui/sonner'
 import Nav from '@/components/nav'
 import { uploadThingFileRouter } from '@/app/api/uploadthing/core'
@@ -34,20 +36,22 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <NextSSRPlugin
-          routerConfig={extractRouterConfig(uploadThingFileRouter)}
-        />
-        <body className={`font-sans ${lato.variable} dark`}>
-          <div className="grid h-screen grid-rows-[auto,1fr]">
-            <Nav />
-            <main className="overflow-y-scroll">{children}</main>
-          </div>
-          {modal}
-          <div id="modal-root"></div>
-          <Toaster />
-        </body>
-      </html>
+      <CSPostHogProvider>
+        <html lang="en">
+          <NextSSRPlugin
+            routerConfig={extractRouterConfig(uploadThingFileRouter)}
+          />
+          <body className={`font-sans ${lato.variable} dark`}>
+            <div className="grid h-screen grid-rows-[auto,1fr]">
+              <Nav />
+              <main className="overflow-y-scroll">{children}</main>
+            </div>
+            {modal}
+            <div id="modal-root"></div>
+            <Toaster />
+          </body>
+        </html>
+      </CSPostHogProvider>
     </ClerkProvider>
   )
 }
