@@ -17,6 +17,8 @@
     "ianvs",
     "nextjs",
     "posthog",
+    "ratelimit",
+    "ratelimiter",
     "runtimes",
     "Shadcn",
     "sonner",
@@ -25,6 +27,7 @@
     "trpc",
     "typecheck",
     "uploadthing",
+    "upstash",
     "utfs"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"
