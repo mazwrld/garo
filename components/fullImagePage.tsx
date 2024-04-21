@@ -1,10 +1,13 @@
 import Image from 'next/image'
-import { getUserImage } from '@/server/queries'
+import { deleteImage, getUserImage } from '@/server/queries'
 import { clerkClient } from '@clerk/nextjs/server'
 
 import ShinyButton from '@/components/shinyButton'
 
 export default async function FullPageImageView(props: { imageId: number }) {
+  const idAsNumber = Number(props.imageId)
+  if (Number.isNaN(idAsNumber)) throw new Error('Invalid photo id')
+
   const image = await getUserImage(props.imageId)
   const uploaderInfo = await clerkClient.users.getUser(image.userId)
   return (
@@ -34,7 +37,14 @@ export default async function FullPageImageView(props: { imageId: number }) {
         </div>
 
         <div className="p-2">
-          <ShinyButton>Delete</ShinyButton>
+          <form
+            action={async () => {
+              'use server'
+              await deleteImage(idAsNumber)
+            }}
+          >
+            <ShinyButton type="submit">Delete</ShinyButton>
+          </form>
         </div>
       </div>
     </div>
