@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import { useUploadThing } from '@/utils/uploadthing'
+import { usePostHog } from 'posthog-js/react'
 import { toast } from 'sonner'
 
 type Input = Parameters<typeof useUploadThing>
@@ -52,8 +53,10 @@ function Spinner() {
 
 export default function CostumeUploadButton() {
   const router = useRouter()
+  const postHog = usePostHog()
   const { inputProps } = useUploadThingInputProps('imageUploader', {
     onUploadBegin() {
+      postHog.capture('upload_being')
       toast(
         <div className="flex items-center gap-2">
           <Spinner />
