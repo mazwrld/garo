@@ -4,11 +4,14 @@ import { motion } from 'framer-motion'
 
 export default function ShinyButton({
   children,
+  type = 'button', // Default to "button" type
 }: {
   children: React.ReactNode
+  type?: 'button' | 'submit' | 'reset' // Define the optional type prop
 }) {
   return (
     <motion.button
+      type={type} // Use the type prop
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error SHUT UP ALREADY
       initial={{ '--x': '100%', scale: 1 }}
