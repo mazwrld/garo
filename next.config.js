@@ -1,7 +1,5 @@
 import { withSentryConfig } from '@sentry/nextjs'
 
-await import('./env.js')
-
 /** @type {import("next").NextConfig} */
 const nextConfig = {
   images: {
