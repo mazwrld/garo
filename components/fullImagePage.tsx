@@ -11,7 +11,7 @@ export default async function FullPageImageView(props: { imageId: number }) {
   const image = await getUserImage(idAsNumber)
   const uploaderInfo = await clerkClient.users.getUser(image.userId)
   return (
-    <div className="flex h-full w-screen min-w-0">
+    <div className="flex size-full min-w-0">
       <div className="relative size-full">
         <Image
           src={image.url}
@@ -36,7 +36,7 @@ export default async function FullPageImageView(props: { imageId: number }) {
           </span>
         </div>
 
-        <div className="mt-auto flex w-full justify-center p-4">
+        <div className="mt-auto flex justify-center p-4">
           <form
             action={async () => {
               'use server'
