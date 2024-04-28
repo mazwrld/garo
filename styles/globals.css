@@ -112,6 +112,13 @@ svg.spinner circle {
   }
 }
 
+button:focus {
+  outline: none;
+}
+button:focus-visible {
+  outline: none;
+}
+
 .radial-gradient {
   background: radial-gradient(
       circle at 50% 0%,
