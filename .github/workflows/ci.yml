@@ -24,23 +24,14 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install pnpm
-        run: npm install -g pnpm
-
-      - uses: pnpm/action-setup@v3.0.0
-        name: Install pnpm packages
-        with:
-          version: 8
-          run_install: true
-
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Type check
-        run: pnpm typecheck
+        run: npm run typecheck
 
       - name: Lint
-        run: pnpm lint
+        run: npm run lint
 
   Deploy-Preview:
     runs-on: ubuntu-latest
