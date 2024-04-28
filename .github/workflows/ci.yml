@@ -6,6 +6,7 @@ on:
       - main
     paths-ignore:
       - 'README.md' # Ignore specific files from triggering the workflow
+      - .github/workflows/ci.yml
 
 env:
   POSTGRES_URL: 'postgresql://postgres:password@localhost:5432/garo'
@@ -36,7 +37,7 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         name: Setup pnpm cache
         with:
           path: ${{ env.STORE_PATH }}
