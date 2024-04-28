@@ -1,21 +1,25 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, type HTMLMotionProps } from 'framer-motion'
+
+type ExtendedMotionProps = HTMLMotionProps<'button'> & {
+  initial?: Record<string, unknown>
+  animate?: Record<string, unknown>
+}
+
+type ShinyButtonProps = ExtendedMotionProps & {
+  children: React.ReactNode
+}
 
 export default function ShinyButton({
   children,
   type = 'button', // Default to "button" type
-}: {
-  children: React.ReactNode
-  type?: 'button' | 'submit' | 'reset' // Define the optional type prop
-}) {
+  ...rest
+}: ShinyButtonProps) {
   return (
     <motion.button
-      type={type} // Use the type prop
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error SHUT UP ALREADY
+      type={type}
       initial={{ '--x': '100%', scale: 1 }}
-      // @ts-expect-error TRUST ME THIS WORKS
       animate={{ '--x': '-100%' }}
       whileTap={{ scale: 0.88 }}
       transition={{
@@ -34,6 +38,7 @@ export default function ShinyButton({
         },
       }}
       className="radial-gradient relative w-40 rounded-md px-6 py-2"
+      {...rest}
     >
       <span className="linear-mask relative block h-full w-full tracking-wide">
         {children}
