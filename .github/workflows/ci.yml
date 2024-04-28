@@ -6,7 +6,6 @@ on:
       - main
     paths-ignore:
       - 'README.md' # Ignore specific files from triggering the workflow
-      - .github/workflows/ci.yml
 
 env:
   POSTGRES_URL: 'postgresql://postgres:password@localhost:5432/garo'
