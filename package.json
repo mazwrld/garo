@@ -14,8 +14,7 @@
     "start": "next start",
     "preview": "next build && next start",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
-    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
-    "kill:vercel": "rm -rf .vercel"
+    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
     "@clerk/nextjs": "5.0.0-beta.43",
